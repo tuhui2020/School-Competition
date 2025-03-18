@@ -3,7 +3,7 @@
 int QR_num=2;
 int line3[7]={0,1,1,2,2,3,3};
 int Uln[7][3]={{0,0,0},{1,0,2},{1,2,0},{2,0,1},{0,2,1},{2,1,0},{0,1,2}};
-	//1Îªred£¬2Îªgreen£¬0Îªblue
+	//1ä¸ºredï¼Œ2ä¸ºgreenï¼Œ0ä¸ºblue
 void Getline(int direction){
 	while (1){
 		if (L1+L2+L3+M>=4||M+R1+R2+R3>=4||L1+L2+L3+M+R1+R2+R3==0){motor_stop();break;}
@@ -41,34 +41,35 @@ void Getline(int direction){
 			int t=direction/5;
 			while (t--){
 				if (L3==1){
-					motor_r(-20);
-					motor_l(-70);
-					Delay_ms(5); 
+					motor_r(100);
+					motor_l(30);
+					//Delay_ms(1); 
 				}else if (L2==1){
-					motor_r(-20);
-					motor_l(-60);
-					Delay_ms(5);
+					motor_r(90);
+					motor_l(50);
+					//Delay_ms(1);
 				}else if (R3==1){
-					motor_l(-20);
-					motor_r(-70);
-					Delay_ms(5);
+					motor_l(100);
+					motor_r(30);
+					//Delay_ms(1);
 				}else if (R2==1){
-					motor_l(-20);
-					motor_r(-60);
-					Delay_ms(5);
+					motor_l(90);
+					motor_r(50);
+					//Delay_ms(1);
 				}else if (L1==1){
-					motor_r(-30);
-					motor_l(-50);
-					Delay_ms(5);
+					motor_r(80);
+					motor_l(60);
+					//Delay_ms(1);
 				}else if (R1==1){
-					motor_l(-30);
-					motor_r(-50);
-					Delay_ms(5);
+					motor_l(80);
+					motor_r(60);
+					//Delay_ms(1);
 				}else if (M==1){
-					motor_r(-20);
-					motor_l(-20);
-					Delay_ms(5);
+					motor_r(70);
+					motor_l(70);
+					//Delay_ms(1);
 				}
+				Delay_ms(5);
 			}
 			break;
 		}
@@ -80,17 +81,17 @@ void Getline1(void){
 	//	Get_object();
 	//}
 	Getline(1);
-	//µ½´ï×ó×ªÍä
-	//ºóÍËµ½¶şÎ¬ÂëÎ»ÖÃ
+	//åˆ°è¾¾å·¦è½¬å¼¯
+	//åé€€åˆ°äºŒç»´ç ä½ç½®
 	//	motor_l(-50);
 	//	motor_r(-50);
 	//	Delay_ms(1300);
 	//	motor_stop();
-	//	//ÓÒ×ªÍä90
+	//	//å³è½¬å¼¯90
 	//	motor_l(50);
 	//	motor_r(-50);
 	//	Delay_ms(500);
-	//	//Í£Ö¹µÈ´ıÉ¨Âë
+	//	//åœæ­¢ç­‰å¾…æ‰«ç 
 	//	motor_stop();
 	//	motor_l(-20);
 	//	motor_r(-20);
@@ -98,21 +99,21 @@ void Getline1(void){
 	//	motor_stop();
 	//	//sent_camera(1);
 	//	Delay_ms(2000);
-	//	//×ó×ªÍäÖÁÄÜÑ²ÏßÎ»ÖÃ
+	//	//å·¦è½¬å¼¯è‡³èƒ½å·¡çº¿ä½ç½®
 	//	while(L1+M+R1==0){
 	//		motor_r(20);
 	//		motor_l(20);
 	//		Delay_ms(5);
 	//	}
 	//	turn_left();
-	//	//ÔÙ´ÎÑ²ÏßÖÁ×ó×ªÎ»ÖÃ²¢×ó×ª
+	//	//å†æ¬¡å·¡çº¿è‡³å·¦è½¬ä½ç½®å¹¶å·¦è½¬
 	//	Getline(1);
 	turn_left();
 	motor_stop();
 }
 
 void Getline2(void){
-	//ÈÆ¹ıµÚÒ»¸öÂ·¿Ú£¬×ßµ½Ò»ºÅÌ¨
+	//ç»•è¿‡ç¬¬ä¸€ä¸ªè·¯å£ï¼Œèµ°åˆ°ä¸€å·å°
 	Getline(1);
 	motor_l(50);
 	motor_r(50);
@@ -122,7 +123,7 @@ void Getline2(void){
 	//Getline(1); 
 	//ULN(Uln[QR_num][0]);
 	//Put_object(1);
-	//µ¹³µµ½Â·¿Ú²¢×ªÍä
+	//å€’è½¦åˆ°è·¯å£å¹¶è½¬å¼¯
 	//while (L1+M+R1==0){
 	//	motor_l(-50);
 	//	motor_r(50);
@@ -143,7 +144,7 @@ void Getline2(void){
 		motor_r(50);
 	}
 	motor_stop();
-	//Ç°Íù¶şºÅÌ¨
+	//å‰å¾€äºŒå·å°
 	Getline(1);
 	motor_l(50);
 	motor_r(50);
@@ -178,7 +179,7 @@ void Getline2(void){
 
 }
 void Getline3(void){
-	//QR_num=1×ß×ó±ßÒ»ÌõÏß
+	//QR_num=1èµ°å·¦è¾¹ä¸€æ¡çº¿
 	if (line3[QR_num]==3){
 		motor_l(50);
 		motor_r(50);
